@@ -24,8 +24,8 @@ namespace Basic
             for(int i=0; i<10;i++)
             {
                 var angle = random.NextDouble() * 2.0 * Math.PI;
-                var speed = new asd.Vector2DF(5.0f*(float)Math.Cos(angle), 5.0F*(float)Math.Sin(angle));
-                var pos = new asd.Vector2DF(random.Next() % 640, random.Next() % 480);
+                var speed = new asd.Vector2DF((float)Math.Cos(angle), (float)Math.Sin(angle)) * 5.0F;
+                var pos = new asd.Vector2DF(random.Next() % asd.Engine.WindowSize.X, random.Next() % asd.Engine.WindowSize.Y);
                 var target = new Target(speed);
                 target.Position = pos;
                 asd.Engine.AddObject2D(target);

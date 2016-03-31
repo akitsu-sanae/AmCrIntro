@@ -24,9 +24,9 @@ namespace Basic
 
         protected override void OnUpdate()
         {
-            if (this.Position.X < 0 || this.Position.X > 640)
+            if (this.Position.X < 0 || this.Position.X > asd.Engine.WindowSize.X)
                 this.speed.X *= -1;
-            if (this.Position.Y < 0 || this.Position.Y > 480)
+            if (this.Position.Y < 0 || this.Position.Y > asd.Engine.WindowSize.Y)
                 this.speed.Y *= -1;
             this.Position += this.speed;
 
