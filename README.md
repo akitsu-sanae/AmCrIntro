@@ -1,0 +1,2 @@
+# AmCrIntro
+2016年筑波大学AmusementCreators新入生向けのゲーム制作導入講座
