@@ -21,15 +21,8 @@ namespace Basic
             asd.Engine.Initialize("Basic Game", 640, 480, new asd.EngineOption());
 
             var random = new System.Random();
-            for(int i=0; i<10;i++)
-            {
-                var angle = random.NextDouble() * 2.0 * Math.PI;
-                var speed = new asd.Vector2DF((float)Math.Cos(angle), (float)Math.Sin(angle)) * 5.0F;
-                var pos = new asd.Vector2DF(random.Next() % asd.Engine.WindowSize.X, random.Next() % asd.Engine.WindowSize.Y);
-                var target = new Target(speed);
-                target.Position = pos;
-                asd.Engine.AddObject2D(target);
-            }
+            for (int i = 0; i < 10; i++)
+                asd.Engine.AddObject2D(new Target(ref random));
 
             while (asd.Engine.DoEvents())
             {

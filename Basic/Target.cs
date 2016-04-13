@@ -16,10 +16,12 @@ namespace Basic
 {
     class Target : asd.TextureObject2D
     {
-        public Target(asd.Vector2DF speed)
+        public Target(ref System.Random random)
         {
             this.Texture = asd.Engine.Graphics.CreateTexture2D("Resources/target.png");
-            this.speed = speed;
+            var angle = random.NextDouble() * 2.0 * Math.PI;
+            this.speed = new asd.Vector2DF((float)Math.Cos(angle), (float)Math.Sin(angle)) * 5.0F;
+            this.Position = new asd.Vector2DF(random.Next(0, asd.Engine.WindowSize.X), random.Next(0, asd.Engine.WindowSize.Y));
         }
 
         protected override void OnUpdate()
